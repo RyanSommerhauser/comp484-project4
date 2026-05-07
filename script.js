@@ -174,7 +174,7 @@ function startCountdown() {
             announce("Starting in " + count);
         } else if (count === 0) {
             countdownEl.textContent = "GO!";
-            announce("Go. Start typing now.");
+            announce("Go.");
         } else {
             clearInterval(countdownInterval);
 
