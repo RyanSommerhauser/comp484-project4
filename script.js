@@ -11,6 +11,7 @@ let timerRunning = false;
 let errorCount = 0;
 let lastInput = "";
 let countdownRunning = false;
+let testComplete = false;
 
 // Helper function
 function getTotalSeconds() {
@@ -129,7 +130,9 @@ function spellCheck() {
 
     lastInput = textEntered;
 
-    if (textEntered === originText) {
+    if (textEntered === originText && !testComplete) {
+        testComplete = true;
+        
         testWrapper.style.borderColor = "green";
         clearInterval(interval);
         timerRunning = false;
@@ -194,6 +197,7 @@ function reset() {
     interval = null;
     timer = [0, 0, 0];
     timerRunning = false;
+    testComplete = false;
 
     testArea.value = "";
     theTimer.innerHTML = "00:00:00";
