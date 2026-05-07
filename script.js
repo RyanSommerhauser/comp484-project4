@@ -132,7 +132,7 @@ function spellCheck() {
 
     if (textEntered === originText && !testComplete) {
         testComplete = true;
-        
+
         testWrapper.style.borderColor = "green";
         clearInterval(interval);
         timerRunning = false;
@@ -186,7 +186,7 @@ function startCountdown() {
             timerRunning = true;
             countdownRunning = false;
 
-            announce("Test started");
+            announce(originText);
         }
     }, 1000);
 }
